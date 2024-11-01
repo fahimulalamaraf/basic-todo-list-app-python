@@ -32,37 +32,50 @@ while True:
 
     elif user_action.startswith("edit"):
 
+        try:
 
-        number = int(user_action[5:])
+            number = int(user_action[5:])
 
-        edited_user_action = input("Enter the new to-do: ") + '\n'
+            edited_user_action = input("Enter the new to-do: ") + '\n'
 
-        number = number-1
+            number = number-1
 
-        todos[number] = edited_user_action
+            todos[number] = edited_user_action
 
 
-        with open('todos.txt', 'w') as file:
-            file.writelines(todos)
+            with open('todos.txt', 'w') as file:
+                file.writelines(todos)
 
-        print("Updated Successfully!")
+            print("Updated Successfully!")
+
+        except ValueError:
+            print("Please enter a number!")
+            continue
 
 
     elif user_action.startswith("complete"):
 
-        number = int(user_action[9:])
-        index = number - 1
+        try:
 
-        removed_message =  todos[index].strip('\n')
+            number = int(user_action[9:])
+            index = number - 1
 
-        todos.pop(index)
+            removed_message =  todos[index].strip('\n')
 
-        # Rewrite the updated to-do list in the text file
-        with open('todos.txt', 'w') as file:
-            file.writelines(todos)
+            todos.pop(index)
 
-        message = f"Todo {removed_message} was removed from the list"
-        print(message)
+            # Rewrite the updated to-do list in the text file
+            with open('todos.txt', 'w') as file:
+                file.writelines(todos)
+
+            message = f"Todo {removed_message} was removed from the list"
+            print(message)
+
+        except ValueError:
+            print("Please enter a number!")
+            continue
+        except IndexError:
+            print("Please enter a number within the list!")
 
     elif user_action.startswith("exit"):
          break
