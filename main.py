@@ -1,9 +1,4 @@
-
-def get_todos():
-    with open('todos.txt', 'r') as file_local:
-        todos_local = file_local.readlines()
-    return todos_local
-
+import functions
 
 while True:
     user_action = input("Type add, show, edit, complete or exit: ")
@@ -15,17 +10,16 @@ while True:
 
         todo = user_action[4:]
 
-        todos = get_todos()
+        todos = functions.get_todos()
 
         todos.append(todo + "\n")
 
-        with open('todos.txt', 'w') as file:
-            file.writelines(todos)
+        functions.set_todos (todos)
 
 
     elif user_action.startswith("show"):
 
-        todos = get_todos()
+        todos = functions.get_todos()
 
         for index, item in enumerate(todos):
             item = item.title()
@@ -46,7 +40,7 @@ while True:
             todos[number] = edited_user_action
 
 
-            todos = get_todos()
+            todos = functions.get_todos()
 
             print("Updated Successfully!")
 
@@ -67,8 +61,7 @@ while True:
             todos.pop(index)
 
             # Rewrite the updated to-do list in the text file
-            with open('todos.txt', 'w') as file:
-                file.writelines(todos)
+            functions.set_todos(todos)
 
             message = f"Todo {removed_message} was removed from the list"
             print(message)
@@ -78,6 +71,7 @@ while True:
             continue
         except IndexError:
             print("Please enter a number within the list!")
+            continue
 
     elif user_action.startswith("exit"):
          break
