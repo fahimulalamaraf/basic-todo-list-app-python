@@ -1,10 +1,11 @@
 read book
 clean room
-wash clothes
 fold clothes
 make soup
 clean laptop
 play soccer today
-create a new git repo
+Wash pants
 Clean the room
 Master Python
+Completed
+My latest todos updated
