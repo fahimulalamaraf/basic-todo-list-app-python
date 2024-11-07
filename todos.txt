@@ -6,3 +6,5 @@ make soup
 clean laptop
 play soccer today
 create a new git repo
+Clean the room
+Master Python
