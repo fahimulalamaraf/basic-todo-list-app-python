@@ -5,6 +5,8 @@ def get_todos(filepath=FILEPATH):
 
     with open(filepath, 'r') as file_local:
         todos_local = file_local.readlines()
+        for item in todos_local:
+            item = item.title()
     return todos_local
 
 def set_todos(updated_todos, filepath=FILEPATH):
