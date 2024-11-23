@@ -28,6 +28,6 @@ Every time our user updates their to-do list and exits the app, the data needs t
 ## GUI:
 
 
-### Discussion:
+## Discussion:
 
 Python at the start, I found it easy but complicated in its own sense as the syntax of my prior experienced languages were quite similar. Python is extremely loosely typed language and has the ease of coding for any developer., Through this basic app project I have covered multiple essential topics for python which through time and practice will help me become a well-sound python developer. Thank you!
