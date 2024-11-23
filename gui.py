@@ -61,7 +61,6 @@ while True:     #Read method opens the gui window with all the objects mentioned
             todos.remove(todo_to_complete)
             functions.set_todos(todos)
             window['todos'].update(values=todos)
-            # window['todo'].update(values="")
 
         case "Exit":
             break
